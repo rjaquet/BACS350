@@ -1,8 +1,9 @@
 from django.urls import path
-from pages.views import homePageView, MyView, IndexView, HomeView, AboutView
+from hero.views import HulkView, BlackWidow, IronMan
 
 
 urlpatterns = [
-    path('hulk',IndexView.as_view )),
-    path('ironman',HomeView.as_view() ),
-    path('blackwidow',AboutView.as_view()),
+    path('hulk', HulkView.as_view()),
+    path('ironman',IronMan.as_view() ),
+    path('blackwidow',BlackWidow.as_view()),
+]
