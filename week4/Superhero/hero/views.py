@@ -1,13 +1,18 @@
 from django.views.generic import TemplateView
 
 
+class IndexView(TemplateView:)
+    template_name = 'index.html'
+
+
 class HulkView(TemplateView):
-    template_name = 'hulk.html'
+    template_name = 'hero.html'
     
     def get_context_data(self, **kwargs):
         return {
-            'title': 'About this Class', 
-            'body': 'Once upon a time ...',
+            'title': "Hulk", 
+            'body': 'My name is Bruce Banner...',
+            'image': '/static/images/hulk.jpg'
         }
  
 class IronMan(TemplateView):
