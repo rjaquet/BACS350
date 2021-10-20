@@ -1,6 +1,4 @@
-from django.shortcuts import render
-
-#from django.views.generic import TemplateView
+from django.views.generic import TemplateView
 
 
 class HulkView(TemplateView):
@@ -24,4 +22,3 @@ class IronMan(TemplateView):
 
 class BlackWidow(TemplateView):
     template_name = "black_widow.html"
- Create your views here.
