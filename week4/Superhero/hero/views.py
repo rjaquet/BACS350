@@ -1,37 +1,21 @@
-from django.views.generic import TemplateView
+from django.views.generic import ListView, TemplateView
+from .models import Hero
 
 
-class IndexView(TemplateView:)
+class HeroListView(ListView):
+    model = Hero
+    template_name = 'hero_list.html'
+
+
+class HeroDetailView(TemplateView):
+    model = Hero
+    template_name = 'hero_detail.html'
+
+    def get_context_data(self, **kwargs):
+        hero_id = kwargs['pk']
+        hero = Hero.objects.get(pk=hero_id)
+        return {'hero': hero}
+
+
+class IndexView(TemplateView):
     template_name = 'index.html'
-
-
-class HulkView(TemplateView):
-    template_name = 'hero.html'
-    
-    def get_context_data(self, **kwargs):
-        return {
-            'title': "Hulk", 
-            'body': 'My name is Bruce Banner...',
-            'image': '/static/images/hulk.jpg'
-        }
- 
-class IronMan(TemplateView):
-    template_name = "hero.html"
-    
-    def get_context_data(self, **kwargs):
-        return {
-            'title': 'Iron Man', 
-            'body': 'My name is Tony Stark, but I am Iron Man'
-            'image': '/static/images/iron_man.jpg'
-        }
- 
-
-class BlackWidow(TemplateView):
-    template_name = "hero.html"
-    
-    def get_context_data(self, **kwargs):
-        return {
-            'title': 'Black Widow', 
-            'body': 'My name is Natasha Romanova'
-            'image': '/static/images/black_widow.jpg'
-        }
