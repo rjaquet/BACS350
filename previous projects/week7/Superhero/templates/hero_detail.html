@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Superhero Detail</title>
+</head>
+
+{% extends 'superhero_theme.html' %}
+{% block content %}
+
+<body>
+    <h2>{{ hero.name }} ({{ hero.identity}})</h2>
+    <h5>{{ hero.description }}</h5>
+
+    <div class="row">
+        <div class="col ms-2 d-flex align-items-center">
+            <h5>Strength: {{ hero.strength }}</h5>
+        </div>
+        <div class="col">
+            <p><img src="{{ hero.image }}" alt="{{ hero.name}}" width="280"></p>
+        </div>
+        <div class="col me-2 d-flex align-items-center">
+            <h5>Weakness: {{hero.weakness }}</h5>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            <a href="{{ hero.pk }}/" class="btn btn-primary m-5">Edit Hero</a>
+            <a class="btn btn-light" href="/hero/">Shows all Heros</a>
+            <a href="{{ hero.pk }}/delete" class="btn btn-primary m-5">Delete</a>
+        </div>
+    </div>
+</body>
+
+{% endblock content %}
+
+</html>

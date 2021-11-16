@@ -1,0 +1,32 @@
+{% extends 'superhero_theme.html' %}
+
+{% block content %}
+
+<div class="container-fluid">
+
+    <h1 class="">Article Details</h1>
+
+    <p>Title:</p>
+    <p><b>{{ object.title }}</b></p>
+    <p>Order:</p>
+    <p><b>{{ object.order }}</b></p>
+    <p>Document:</p>
+    <p><b>{{ object.document }}</b></p>
+
+    <div class="card m-5">
+        <div class="card-header bg-success text-light">
+            <h3>Chapter {{ object.order }} - {{ object.title }}</h3>
+        </div>
+        <div class="card-body p-5">
+            {% autoescape off %}
+            {{ object.html }}
+            {% endautoescape %}
+        </div>
+    </div>
+
+    <a href="/chapter/" class="btn btn-success m-5">Article List</a>
+    <a href="/chapter/{{ object.pk }}/" class="btn btn-success m-5">Edit Article</a>
+    <a href="/chapter/{{ object.pk }}/delete" class="btn btn-success m-5">Delete Article</a>
+</div>
+
+{% endblock content %}
