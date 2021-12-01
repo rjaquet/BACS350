@@ -4,9 +4,9 @@
 
 {% block content %}
 
-<h1>Delete Account</h1>
+<h1 class="text-light">Delete Account</h1>
 
-<form action="" method="post">{% csrf_token %}
+<form class="text-light" action="" method="post">{% csrf_token %}
     <p>Are you sure you want to delete "{{ object.first_name }}"?</p>
     <input type="submit" value="Confirm">
 </form>

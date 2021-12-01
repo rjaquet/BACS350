@@ -14,7 +14,7 @@
 <body>
     <ul>
         {% for hero in object_list %}
-        <li>
+        <li class="text-light">
             <h3>{{ hero.name }}</h2>
                 <p><img src="{{ hero.image }}" alt="{{ hero.name}}" width="10%"></p>
                 <p><a class="btn btn-light" href="{{ hero.pk }}">Details</a></p>
@@ -22,8 +22,8 @@
         {% endfor %}
     </ul>
 
-    <a href="/admin/" class="btn btn-primary m-5 ">Modify Database with Admin Views</a>
-    <a href="/hero/add" class="btn btn-primary m-5">Add New Hero</a>
+    <a href="/admin/" class="btn btn-danger m-5 ">Modify Database with Admin Views</a>
+    <a href="/hero/add" class="btn btn-danger m-5">Add New Hero</a>
 </body>
 
 {% endblock content %}

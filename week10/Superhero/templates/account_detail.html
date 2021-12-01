@@ -2,13 +2,13 @@
 
 {% block content %}
 
-<h1>Book Details</h1>
+<h1 class="text-light">Book Details</h1>
 <ul>
-    <li>Name: {{ object.first_name }} {{ object.last_name }}</li>
-    <li>User Name: {{ object.username }}</li>
-    <li>Email: {{ object.email }}</li>
+    <li class="text-light">Name: {{ object.first_name }} {{ object.last_name }}</li>
+    <li class="text-light">User Name: {{ object.username }}</li>
+    <li class="text-light">Email: {{ object.email }}</li>
 </ul>
 
-<a href="{% url 'account_list' %}" class="btn btn-warning m-5">Account List</a>
+<a href="{% url 'account_list' %}" class="btn btn-danger m-5">Account List</a>
 
 {% endblock content %}
